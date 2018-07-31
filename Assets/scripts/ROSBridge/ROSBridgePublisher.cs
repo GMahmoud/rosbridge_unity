@@ -12,8 +12,8 @@ namespace ROSBridge {
 			return null;
 		}
 
-		public static string ToYAMLString() {
-			return null;
-		}
+		// public static string ToYAMLString() {
+		// 	return null;
+		// }
 	}
 }
