@@ -1,15 +1,16 @@
 using UnityEngine;
 using ROSBridge;
+using ROS.std_msgs;
 
 public class Main : MonoBehaviour 
 {
   
   void Start() {
    
-    ros = new ROSBridgeConnection ("ws://192.168.1.90", 9090);
+    ros = new ROSBridgeConnection ("ws://localhost", 9090);
 
     ros.AddSubscriber (typeof(Subscriber));
-    //ros.AddPublisher (typeof(Publisher));
+    ros.AddPublisher (typeof(Publisher));
 
     ros.Connect ();
   }
@@ -17,12 +18,18 @@ public class Main : MonoBehaviour
   
   void OnApplicationQuit() {
     if(ros!=null) {
+      Debug.Log("Disconnect");
       ros.Disconnect ();
     }
   }
 
-  void Update () {
+  void Update () 
+  {
     ros.Render ();
+    Float32Msg msg = new Float32Msg(100); 
+    // Debug.Log(Publisher.GetMessageTopic());
+ros.Publish(Publisher.GetMessageTopic(), msg);
+
   }
 
   private ROSBridgeConnection ros = null;
