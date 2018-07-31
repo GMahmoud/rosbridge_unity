@@ -2,10 +2,6 @@ using System.Collections;
 using System.Text;
 using SimpleJSON;
 using ROSBridge;
-/* 
- * @brief ROSBridgeLib
- * @author Michael Jenkin, Robert Codd-Downey, Andrew Speers and Miquel Massot Campos
- */
 
 namespace ROS {
 	namespace std_msgs {

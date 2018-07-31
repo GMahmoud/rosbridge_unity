@@ -3,7 +3,7 @@ using SimpleJSON;
 
 
 namespace ROSBridge {
-	public class ROSBridgeSubscriber {
+	public class ROSBridgeSubscriber<T> where T: ROSBridgeMsg {
 
 		public static string GetMessageTopic() {
 			return null;
@@ -13,11 +13,11 @@ namespace ROSBridge {
 			return null;
 		}
 
-		public static ROSBridgeMsg ParseMessage(JSONNode msg) {
+		public static T ParseMessage(JSONNode msg) {
 			return null;
 		}
 
-		public static void CallBack(ROSBridgeMsg msg) {
+		public static void CallBack(T msg) {
 		}
 	}
 }

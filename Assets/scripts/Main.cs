@@ -1,9 +1,9 @@
 using UnityEngine;
 using ROSBridge;
 
-public class Main : MonoBehaviour {
-  private ROSBridgeConnection ros = null;
-    
+public class Main : MonoBehaviour 
+{
+  
   void Start() {
    
     ros = new ROSBridgeConnection ("ws://192.168.1.90", 9090);
@@ -24,4 +24,7 @@ public class Main : MonoBehaviour {
   void Update () {
     ros.Render ();
   }
+
+  private ROSBridgeConnection ros = null;
+  
 }
