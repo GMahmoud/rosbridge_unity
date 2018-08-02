@@ -26,7 +26,7 @@ public class Main : MonoBehaviour
   void Update () 
   {
     ros.Render ();
-    Float32Msg msg = new Float32Msg(100); 
+    Float32 msg = new Float32(100); 
     // Debug.Log(Publisher.GetMessageTopic());
 ros.Publish(Publisher.GetMessageTopic(), msg);
 

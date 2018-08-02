@@ -3,9 +3,8 @@ using UnityEngine;
 using SimpleJSON;
 using ROS.std_msgs;
 
-public class Subscriber : ROSBridgeSubscriber<ROS.std_msgs.Float32Msg> 
+public class Subscriber : ROSBridgeSubscriber<UInt64> 
 {
- 
   public new static string GetMessageTopic() 
   {
     return "/listener";
@@ -13,18 +12,17 @@ public class Subscriber : ROSBridgeSubscriber<ROS.std_msgs.Float32Msg>
 
   public new static string GetMessageType() 
   {
-    return "std_msgs/Float32";
+    return "std_msgs/UInt64";
   }
 
-  public new static Float32Msg ParseMessage(JSONNode msg) 
+  public new static UInt64 ParseMessage(JSONNode msg) 
   {
-    return new Float32Msg (msg);
+    return new UInt64 (msg);
   }
 
-  public new static void CallBack(Float32Msg msg) 
+  public new static void CallBack(UInt64 msg) 
   {
-    //Float32Msg float_msg = (Float32Msg)msg;
-    Debug.Log(msg.GetData());
+    Debug.Log(msg.ToYAMLString());
+    Debug.Log(msg.ToString());
   }
-
 }
