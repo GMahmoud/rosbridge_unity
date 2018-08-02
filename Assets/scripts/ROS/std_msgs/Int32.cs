@@ -2,34 +2,35 @@ using System.Collections;
 using System.Text;
 using SimpleJSON;
 using ROSBridge;
+using System;
 
 namespace ROS {
 	namespace std_msgs {
-		public class StringMsg : ROSBridgeMsg {
-			private string _data;
+		public class Int32 : ROSBridgeMsg {
+			private int _data;
 			
-			public StringMsg(JSONNode msg) {
-				_data = msg["data"];
+			public Int32(JSONNode msg) {
+				_data = Convert.ToInt32(msg["data"]);
 			}
 			
-			public StringMsg(string data) {
+			public Int32(byte data) {
 				_data = data;
 			}
 			
 			public static string GetMessageType() {
-				return "std_msgs/String";
+				return "std_msgs/Int32";
 			}
 			
-			public string GetData() {
+			public int GetData() {
 				return _data;
 			}
 			
 			public override string ToString() {
-				return "String [data=" + _data + "]";
+				return "Int32 [data=" + _data .ToString()+ "]";
 			}
 			
 			public override string ToYAMLString() {
-				return "{\"data\" : \"" + _data + "\"}";
+				return "{\"data\" : "+ _data.ToString() + "}";
 			}
 		}
 	}
