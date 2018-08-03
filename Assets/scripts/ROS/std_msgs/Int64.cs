@@ -9,9 +9,9 @@ namespace ROS {
 		public class Int64 : ROSBridgeMsg {
 			private long _data;
 			
-			public Int64(JSONNode msg) {
-				_data = Convert.ToInt64(msg["data"]);
-			}
+			// public Int64(JSONNode msg) {
+			// 	_data = Convert.ToInt64(msg["data"]);
+			// }
 			
 			public Int64(byte data) {
 				_data = data;
@@ -30,7 +30,7 @@ namespace ROS {
 			}
 			
 			public override string ToYAMLString() {
-				return "{\"data\" : "+ _data.ToString() + "}";
+				return "{data : "+ _data.ToString() + "}";
 			}
 		}
 	}

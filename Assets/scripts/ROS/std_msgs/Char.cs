@@ -30,7 +30,7 @@ namespace ROS {
 			}
 			
 			public override string ToYAMLString() {
-				return "{\"data\" : \"" + _data + "\"}";
+				return "{data : \"" + _data + "\"}";
 			}
 		}
 	}
