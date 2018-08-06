@@ -51,12 +51,12 @@ namespace ROS
 			
 			public override string ToString() 
 			{
-				return "Point32 [x=" + _x.ToString() + ",y=" + _y.ToString() + ",z=" + _z + "]";
+				return "Point32 [x=" + _x.ToString() + ",y=" + _y.ToString() + ",z=" + _z.ToString() + "]";
 			}
 			
 			public override string ToYAMLString() 
 			{
-				return "{x=" + _x.ToString() + ",y=" + _y.ToString() + ",z=" + _z + "}";
+				return "{x : " + _x.ToString() + ",y : " + _y.ToString() + ",z : " + _z.ToString() + "}";
 			}
 		}
 	}

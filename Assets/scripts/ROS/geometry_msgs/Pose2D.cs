@@ -9,29 +9,29 @@ namespace ROS
 {
 	namespace geometry_msgs 
 	{
-		public class Vector3 : ROSBridgeMsg 
+		public class Pose2D : ROSBridgeMsg 
 		{
 			private double _x;
 			private double _y;
-			private double _z;
+			private double _theta;
 			
-			public Vector3(JSONNode msg) 
+			public Pose2D(JSONNode msg) 
 			{
 				_x = double.Parse(msg["x"]);
 				_y = double.Parse(msg["y"]);
-				_z = double.Parse(msg["z"]);
+				_theta = double.Parse(msg["theta"]);
 			}
 			
-			public Vector3(double x, double y, double z) 
+			public Pose2D(double x, double y, double theta) 
 			{
 				_x = x;
 				_y = y;
-				_z = z;
+				_theta = theta;
 			}
 			
 			public static string GetMessageType() 
 			{
-				return "geometry_msgs/Vector3";
+				return "geometry_msgs/Pose2D";
 			}
 			
 			public double GetX()
@@ -44,19 +44,19 @@ namespace ROS
 				return _y;
 			}
 
-			public double GetZ() 
+			public double GetTheta() 
 			{
-				return _z;
+				return _theta;
 			}
 			
 			public override string ToString() 
 			{
-				return "Vector3 [x=" + _x.ToString() + ",y=" + _y.ToString() + ",z=" + _z.ToString() + "]";
+				return "Pose2D [x=" + _x.ToString() + ",y=" + _y.ToString() + ",theta=" + _theta.ToString() + "]";
 			}
 			
 			public override string ToYAMLString() 
 			{
-				return "{x : " + _x.ToString() + ",y : " + _y.ToString() + ",z : " + _z.ToString() + "}";
+				return "{x : " + _x.ToString() + ",y : " + _y.ToString() + ",theta : " + _theta.ToString() + "}";
 			}
 		}
 	}

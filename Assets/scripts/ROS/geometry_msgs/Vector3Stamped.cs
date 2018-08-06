@@ -10,26 +10,26 @@ namespace ROS
 {
 	namespace geometry_msgs 
 	{
-		public class PointStamped : ROSBridgeMsg 
+		public class Vector3Stamped : ROSBridgeMsg 
 		{
 			private Header _header;
-			private Point _point;
+			private Vector3 _vector;
 			
-			public PointStamped(JSONNode msg) 
+			public Vector3Stamped(JSONNode msg) 
 			{
 				_header = new Header(msg["header"]);
-				_point = new Point(msg["point"]);
+				_vector = new Vector3(msg["vector"]);
 			}
 			
-			public PointStamped(Header header, Point point) 
+			public Vector3Stamped(Header header, Vector3 vector) 
 			{
 				_header = header;
-				_point = point;
+				_vector = vector;
 			}
 			
 			public static string GetMessageType() 
 			{
-				return "geometry_msgs/PointStamped";
+				return "geometry_msgs/Vector3Stamped";
 			}
 			
 			public Header GetHeader()
@@ -37,19 +37,19 @@ namespace ROS
 				return _header;
 			}
 			
-			public Point GetPoint() 
+			public Vector3 GetVector() 
 			{
-				return _point;
+				return _vector;
 			}
 			
 			public override string ToString() 
 			{
-				return "PointStamped [header=" + _header.ToString() + ",point=" + _point.ToString() + "]";
+				return "Vector3Stamped [header=" + _header.ToString() + ",vector=" + _vector.ToString() + "]";
 			}
 			
 			public override string ToYAMLString() 
 			{
-				return "{header : " + _header.ToYAMLString() + ",point : " + _point.ToYAMLString() + "}";
+				return "{header : " + _header.ToYAMLString() + ",vector : " + _vector.ToYAMLString() + "}";
 			}
 		}
 	}
